@@ -18,5 +18,9 @@ export function sumNumbers(arr) {
  */
 export function average(arr) {
   if (arr.length === 0) return 0;
-  return sumNumbers(arr) / arr.length;
+  let total = 0;
+  for (const n of arr) {
+    total += n;
+  }
+  return total / arr.length;
 }
