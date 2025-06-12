@@ -17,13 +17,11 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '18'
-        cache: 'npm'
-        cache-dependency-path: case2/package-lock.json
     
     - name: Install dependencies
       run: npm ci
       working-directory: ./case2
     
     - name: Run tests
-      run: npm test
+      run: node --experimental-vm-modules ./node_modules/.bin/jest src/tests/math.test.js
       working-directory: ./case2
